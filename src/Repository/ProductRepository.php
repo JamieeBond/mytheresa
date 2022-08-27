@@ -16,26 +16,42 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class ProductRepository extends ServiceEntityRepository
 {
+    /**
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Product::class);
     }
 
-    public function add(Product $entity, bool $flush = false): void
+    /**
+     * @param ProductCriteria $criteria
+     * @return Product[] Returns an array of Product objects
+     */
+    public function match(ProductCriteria $criteria): array
     {
-        $this->getEntityManager()->persist($entity);
+        $qb = $this
+            ->createQueryBuilder('p')
+        ;
 
-        if ($flush) {
-            $this->getEntityManager()->flush();
+        if (null !== $criteria->getCategory()) {
+            $qb
+                ->andWhere('p.category = :category')
+                ->setParameter('category', $criteria->getCategory())
+            ;
         }
-    }
 
-    public function remove(Product $entity, bool $flush = false): void
-    {
-        $this->getEntityManager()->remove($entity);
-
-        if ($flush) {
-            $this->getEntityManager()->flush();
+        if (null !== $criteria->getPriceLessThan()) {
+            $qb
+                ->andWhere('p.price <= :price_less_than')
+                ->setParameter('price_less_than', $criteria->getPriceLessThan())
+            ;
         }
+
+        return $qb
+            ->orderBy('p.name')
+            ->getQuery()
+            ->getResult()
+        ;
     }
 }

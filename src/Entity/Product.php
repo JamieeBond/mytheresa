@@ -8,6 +8,10 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: ProductRepository::class)]
 class Product
 {
+    const CATEGORY_BOOTS = 'boots';
+    const CATEGORY_SANDALS = 'sandals';
+    const CURRENCY_EUR = 'EUR';
+
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]

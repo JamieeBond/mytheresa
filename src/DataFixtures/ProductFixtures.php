@@ -22,28 +22,28 @@ class ProductFixtures extends Fixture
         $manager->persist(new Product(
             '000001',
             'BV Lean leather ankle boots',
-            'boots',
+            Product::CATEGORY_BOOTS,
             89000
         ));
 
         $manager->persist(new Product(
             '000002',
             'BV Lean leather ankle boots',
-            'boots',
+            Product::CATEGORY_BOOTS,
             99000
         ));
 
         $manager->persist(new Product(
             '000003',
             'Ashlington leather ankle boots',
-            'boots',
+            Product::CATEGORY_BOOTS,
             71000
         ));
 
         $manager->persist(new Product(
             '000004',
             'Naima embellished suede sandals',
-            'sandals',
+            Product::CATEGORY_SANDALS,
             79500
         ));
 

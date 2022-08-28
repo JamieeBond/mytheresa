@@ -35,7 +35,7 @@ class ProductTest extends TestCase
     }
 
     /**
-     * @see Product::__construct
+     * @see Product::__construct()
      * @return void
      */
     public function testConstructor(): void

@@ -37,7 +37,7 @@ docker compose up
 ```
 4. Run database migration, confirm with ***yes***:
 ```
-docker exec -it mytheresa_php  php bin/console doctrine:migrations:migrate
+docker exec -it mytheresa_php php bin/console doctrine:migrations:migrate
 ```
 5. Load fixtures of the base data into the database, confirm with ***yes***:
 ```

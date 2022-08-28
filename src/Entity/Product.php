@@ -10,6 +10,7 @@ class Product
 {
     const CATEGORY_BOOTS = 'boots';
     const CATEGORY_SANDALS = 'sandals';
+    const CATEGORY_SNEAKERS = 'sneakers';
     const CURRENCY_EUR = 'EUR';
 
     #[ORM\Id]

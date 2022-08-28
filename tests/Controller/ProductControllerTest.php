@@ -28,7 +28,7 @@ class ProductControllerTest extends WebTestCase
         $expected = json_decode($this->client->getResponse()->getContent(), true);
         $this->assertResponseIsSuccessful();
         $this->assertCount(
-            4,
+            5,
             $expected,
             'Filter not applied, returns all products.'
         );
@@ -60,9 +60,9 @@ class ProductControllerTest extends WebTestCase
         $expected = json_decode($this->client->getResponse()->getContent(), true);
         $this->assertResponseIsSuccessful();
         $this->assertCount(
-            2,
+            3,
             $expected,
-            'Filter priceLessThan:80000, returns 2 products.'
+            'Filter priceLessThan:80000, returns 3 products.'
         );
     }
 

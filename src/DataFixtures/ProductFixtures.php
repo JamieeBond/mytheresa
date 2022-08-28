@@ -47,6 +47,13 @@ class ProductFixtures extends Fixture
             79500
         ));
 
+        $manager->persist(new Product(
+            '000005',
+            'Nathane leather sneakers',
+            Product::CATEGORY_SNEAKERS,
+            59000
+        ));
+
         $manager->flush();
     }
 }

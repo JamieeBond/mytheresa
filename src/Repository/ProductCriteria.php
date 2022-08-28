@@ -4,8 +4,8 @@ namespace App\Repository;
 
 class ProductCriteria
 {
-    private ?string $category;
-    private ?int $priceLessThan;
+    private ?string $category = null;
+    private ?int $priceLessThan = null;
 
     /**
      * @return string|null

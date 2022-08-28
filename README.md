@@ -35,11 +35,11 @@ docker compose build --pull --no-cache
 ```
 docker compose up
 ```
-4. Run database migration:
+4. Run database migration, confirm with ***yes***:
 ```
 docker exec -it mytheresa_php  php bin/console doctrine:migrations:migrate
 ```
-5. Load fixtures of the base data into the database:
+5. Load fixtures of the base data into the database, confirm with ***yes***:
 ```
 docker exec -it mytheresa_php php bin/console doctrine:fixtures:load
 ```
@@ -50,7 +50,6 @@ docker exec -it mytheresa_php php bin/console doctrine:fixtures:load
 docker exec -it mytheresa_php php bin/phpunit
 ```
 ![Screenshot](./docs/tests.png? "Test results")
-
 ### Usage
 1. List all products:
 ```

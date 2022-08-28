@@ -6,8 +6,8 @@ API application to return a list of products, that is also filterable.
 - [PHP](https://www.php.net/) >= 8.1.9
 - [Symfony](https://symfony.com/) >= 6.1
 - [PostgreSQL](https://www.postgresql.org/) = 14
-<br />
-<br />
+
+- Runs inside Docker.
 - An API to return products using CQRS.
 - Products are stored in a PostgreSQL database.
 - No query string will return all products. 
@@ -15,6 +15,7 @@ API application to return a list of products, that is also filterable.
 - Products in the boots category have a 30% discount.
 - The product with sku = 000003 has a 15% discount.
 - When multiple discounts collide, the biggest discount is applied.
+- Fixture loading 5 products into the database
 ## Documentation
 
 ### Set up

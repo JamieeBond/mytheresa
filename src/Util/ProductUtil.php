@@ -20,9 +20,10 @@ class ProductUtil
         $original = $product->getPrice();
 
         $discountPercentage = null;
-        $final = null;
+        $final = $original;
         $discounts = [];
 
+        // Calculate 30% discount if category is boots.
         if (Product::CATEGORY_BOOTS === $product->getCategory()) {
             $percentage = 30;
             $discounts[$percentage] = $this->getDiscountedAmount(
@@ -31,6 +32,7 @@ class ProductUtil
             );
         }
 
+        // Calculate 15% discount if sku matches.
         if ('000003' === $product->getSku()) {
             $percentage = 15;
             $discounts[$percentage] = $this->getDiscountedAmount(
@@ -39,6 +41,7 @@ class ProductUtil
             );
         }
 
+        // If there are discounts, apply the highest discount.
         if (0 !== count($discounts)) {
             $discountPercentage = max(array_keys($discounts));
             $final = $discounts[$discountPercentage];

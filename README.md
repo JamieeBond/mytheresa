@@ -45,7 +45,7 @@ docker exec -it mytheresa_php php bin/console doctrine:fixtures:load
 ```
 
 ### Run Tests
-1. Load fixtures of the base data into the database:
+1. Run tests:
 ```
 docker exec -it mytheresa_php php bin/phpunit
 ```
